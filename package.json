@@ -1,0 +1,19 @@
+{
+  "name": "qa_cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ira8694733/QA_Cypress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ira8694733/QA_Cypress/issues"
+  },
+  "homepage": "https://github.com/Ira8694733/QA_Cypress#readme"
+}
