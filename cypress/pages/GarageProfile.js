@@ -1,4 +1,4 @@
-export default class GarageProfile {
+export default class GarageProfile_ {
 
     addCar() {
         return cy.xpath ("//button[contains(text(), 'Add car')]")
@@ -22,4 +22,4 @@ export default class GarageProfile {
     }
 }
 
-export const garageProfile = new GarageProfile()
+export const garageProfile = new GarageProfile_()
