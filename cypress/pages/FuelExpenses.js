@@ -1,4 +1,4 @@
-export default class FuelExpenses {
+export default class FuelExpenses_ {
 
     addExpenses() {
         return cy.xpath ("//button[contains(text(), 'Add an expense')]")
@@ -25,4 +25,4 @@ export default class FuelExpenses {
     }
 }
 
-export const fuelExpenses = new FuelExpenses()
+export const fuelExpenses = new FuelExpenses_()
