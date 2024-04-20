@@ -2,10 +2,11 @@
 import {basePage} from "../pages/BasePage";
 import {garageProfile} from "../pages/GarageProfile";
 import {fuelExpenses} from "../pages/FuelExpenses";
+import {profilePage} from "../pages/ProfilePage";
 
-const name="Irina"
-const lastName="Test"
-const userPassword ="123Q456w"
+const name="Irina";
+const lastName="Test";
+const userPassword ="123Q456w";
 const baseUrl = 'qauto2.forstudy.space/';
 const email = randomEmail();
 
@@ -26,6 +27,23 @@ const user = {
     userPassword,
 }
 
+// new profile car Audi
+const model = "Audi"
+const brand = "TT"
+const mileage = 12000;
+const newMileage = mileage + 1;
+const liters = 300;
+const totalCost = 15099;
+
+const car ={
+    model,
+    brand,
+    mileage,
+    newMileage,
+    liters,
+    totalCost
+}
+
 describe('Test quatro Sign In', () => {
     it('Visit site', () => {
         cy.visit(`https://guest:welcome2qauto@${baseUrl}`)
@@ -33,33 +51,17 @@ describe('Test quatro Sign In', () => {
         basePage.createAccount(user)
         basePage.registerButton().click()
         cy.url().should('include', '/panel/garage');
-        cy.xpath("//button[@id='userNavDropdown']").click();
-        // cy.xpath("//button[contains(text(), 'My profile')]").click(); - альтернатива. Що краще використовувати?
-        cy.xpath("//a[@routerlink='/panel/profile']").click();
-        // cy.xpath("//p[@class='profile_name.display-4']").should('have.text', 'TestNameZ');
+        profilePage.userNavDropdown().click();
+        profilePage.routerlink().click();
 
-        // cy.xpath("//a[@routerlink='garage']").click();
-        // garageProfile.addCar().click();
-        // garageProfile.addCarBrand().select("BMW");
-        // garageProfile.addCarModel().select("3");
-        // garageProfile.addCarMileage().type('120000').should('have.value', '120000')
-        // cy.wait (2000);
-        // garageProfile.add().click();
-
-        cy.xpath("//a[@routerlink='garage']").click();
+        garageProfile.routerlink().click();
         garageProfile.addCar().click();
-        garageProfile.addCarBrand().select("Audi");
-        garageProfile.addCarModel().select("TT");
-        garageProfile.addCarMileage().type('120000').should('have.value', '120000')
-        cy.wait (2000);
+        garageProfile.createCarAudi(car);
         garageProfile.add().click();
 
-        cy.xpath("//a[@routerlink='expenses']").click();
+        fuelExpenses.routerlink().click();
         fuelExpenses.addExpenses().click();
-        fuelExpenses.addExpenseMileage().clear().type('120010').should('have.value', '120010')
-        fuelExpenses.addExpenseLiters().type('300').should('have.value', '300')
-        fuelExpenses.addExpenseTotalCost().type('15099').should('have.value', '15099')
-        cy.wait (2000);
+        fuelExpenses. updateCarAudi(car);
         fuelExpenses.add().click();
      });
 });

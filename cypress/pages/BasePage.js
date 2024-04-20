@@ -1,4 +1,4 @@
-export default class BasePage_ {
+export default class BasePage {
 
     signInButton() {
         return cy.xpath(`//button[@class='hero-descriptor_btn btn btn-primary']`);
@@ -34,7 +34,8 @@ export default class BasePage_ {
         this.signupPassword().type(user.userPassword).should('have.value', user.userPassword);
         this.signupRepeatPassword().type(user.userPassword).should('have.value', user.userPassword);
     }
+
 }
 
-export const basePage = new BasePage_ ()
+export const basePage = new BasePage()
 

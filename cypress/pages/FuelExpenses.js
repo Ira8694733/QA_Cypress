@@ -1,7 +1,11 @@
-export default class FuelExpenses_ {
+export default class FuelExpenses {
+
+    routerlink() {
+        return cy.xpath("//a[@routerlink='expenses']");
+    }
 
     addExpenses() {
-        return cy.xpath ("//button[contains(text(), 'Add an expense')]")
+        return cy.xpath ("//button[contains(text(), 'Add an expense')]");
     }
 
     addCarExpenses() {
@@ -23,6 +27,12 @@ export default class FuelExpenses_ {
     add() {
         return cy.xpath("//app-add-expense-modal//button[.='Add']");
     }
+
+    updateCarAudi(car){
+        this.addExpenseMileage().clear().type(car.newMileage).should('have.value', car.newMileage)
+        this.addExpenseLiters().type(car.liters).should('have.value', car.liters)
+        this.addExpenseTotalCost().type(car.totalCost).should('have.value', car.totalCost)
+    }
 }
 
-export const fuelExpenses = new FuelExpenses_()
+export const fuelExpenses = new FuelExpenses()
