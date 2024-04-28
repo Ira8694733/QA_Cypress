@@ -7,7 +7,7 @@ export class GarageStep extends GeneralStep{
         GaragePage.addCarButton.click();
         GaragePage.brand.select(car.brand);
         GaragePage.model.select(car.model);
-        GaragePage.mileage.type(car.mileage).should('have.value', car.mileage);
+        GaragePage.mileage.type(car.initialMileage).should('have.value', car.initialMileage);
         GaragePage.saveCarButton.click();
     }
 

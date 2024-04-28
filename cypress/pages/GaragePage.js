@@ -7,6 +7,7 @@ export default class GaragePage {
     static get addCarButton(){
         return cy.xpath ("//button[contains(text(), 'Add car')]");
         // return cy.get('.panel-page_heading > .btn')
+    //   body > app-root > app-global-layout > div > div > div > app-panel-layout > div > div > div > div.col-lg-9.main-wrapper > div > app-garage > div > div.panel-page_heading.d-flex.justify-content-between > button
     }
 
     static get brand(){

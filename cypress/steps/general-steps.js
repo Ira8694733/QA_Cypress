@@ -20,6 +20,10 @@ export default class GeneralStep {
             cy.get('div[ngbdatepickerdayview]').click()
         });
     }
+
+    waitingForApiIsVisible() {
+       HomePage.waitingApi.should ('be.visible');
+    }
 }
 
 export const generalStep = new GeneralStep();
