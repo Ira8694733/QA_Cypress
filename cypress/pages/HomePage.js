@@ -12,9 +12,10 @@ export default class HomePage {
         return cy.xpath("//button[@class='btn btn-danger']",{timeout:10000});
     }
 
-    static get waitingApi(){
+  static get waitingApi(){
         return cy.get('.alert-success', {timeout:10000});
 
     }
 }
+
 export const homePage = new HomePage()
