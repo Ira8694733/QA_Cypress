@@ -21,9 +21,11 @@ export default class GeneralStep {
         });
     }
 
+
     waitingForApiIsVisible() {
        HomePage.waitingApi.should ('be.visible');
     }
+
 }
 
 export const generalStep = new GeneralStep();

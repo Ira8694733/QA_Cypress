@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Ira8694733/QA_Cypress#readme",
   "devDependencies": {
+
     "cypress": "^13.7.3",
     "cypress-xpath": "^2.0.1"
+
   }
 }
