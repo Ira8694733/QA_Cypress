@@ -35,7 +35,21 @@ export default class BasePage {
         this.signupRepeatPassword().type(user.userPassword).should('have.value', user.userPassword);
     }
 
+
+    findButtonText(text){
+        return  cy.get('button').contains(text);
+    }
+
+    signInEmail(){
+        return cy.get('#signinEmail');
+    }
+
+    signInPassword(){
+        return cy.get('#signinPassword');
+    }
+
 }
 
+n
 export const basePage = new BasePage()
 

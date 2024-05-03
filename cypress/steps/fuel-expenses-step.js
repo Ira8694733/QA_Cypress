@@ -6,7 +6,9 @@ export class FuelExpensesStep extends GeneralStep{
     addFuelExpenses(car, day, month, year) {
         FuelExpensesPage.datePicker.click()
         this.datePicker(day, month, year)
-        FuelExpensesPage.addExpenseMileage.clear().type(car.newMileage).should('have.value', car.newMileage)
+
+        FuelExpensesPage.addExpenseMileage.clear().type(car.mileage).should('have.value', car.mileage)
+
         FuelExpensesPage.addExpenseLiters.type(car.liters).should('have.value', car.liters)
         FuelExpensesPage.addExpenseTotalCost.type(car.totalCost).should('have.value', car.totalCost)
         FuelExpensesPage.add.click();

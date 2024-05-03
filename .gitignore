@@ -1,4 +1,8 @@
-node_modules/
+/node_modules/
+/reports/
+/cypress/videos/
 .idea/
 cypress/fixtures/
 cypress/support/
+package-lock.json
+
